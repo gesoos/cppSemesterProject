@@ -112,6 +112,34 @@ public:
     }
 
     std::string get_chrom();
+	void setChrom(const std::string &chrom);
+
+	int getPos() const;
+	void setPos(int pos);
+
+	const std::string &getId() const;
+	void setId(const std::string &id);
+
+	const std::string &getRef() const;
+	void setRef(const std::string &ref);
+
+	const std::string &getAlt() const;
+	void setAlt(const std::string &alt);
+
+	float getQual() const;
+	void setQual(float qual);
+
+	const std::string &getFilter() const;
+	void setFilter(const std::string &filter);
+
+	const std::string &getInfo() const;
+	void setInfo(const std::string &info);
+
+	const std::string &getFormat() const;
+	void setFormat(const std::string &format);
+
+	const std::vector<std::string> &getSamples() const;
+	void setSamples(const std::vector<std::string> &samples);
 
     size_t get_variant_count();
 
