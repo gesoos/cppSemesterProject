@@ -55,6 +55,11 @@ VCFRow VCFFile::parse_row(std::string row) {
     	row_vals.push_back(row);
     }
     VCFRow vcf_row = VCFRow(row_vals);
+
+    if (!vcf_row.is_valid()) {
+    	exit(EXIT_FAILURE);
+    }
+
     total_variant_count += vcf_row.get_variant_count();
     return vcf_row;
 }

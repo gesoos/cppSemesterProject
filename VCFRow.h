@@ -24,7 +24,13 @@ class VCFRow {
 
     size_t variant_count = 0;
 
+	bool check_chrom();
+	bool check_id();
+	bool check_ref();
+	bool check_alt();
+
 public:
+	const std::vector<std::string> BASE_CODES = {"A", "C", "G", "T", "N"};
     explicit VCFRow(std::vector<std::string> row_vals) {
         chrom = row_vals[0];
         pos = std::stoi(row_vals[1]);
@@ -109,7 +115,11 @@ public:
 
     size_t get_variant_count();
 
+	bool is_valid();
+
     friend std::ostream& operator<<(std::ostream &out, const VCFRow& row);
+
+
 };
 
 std::ostream& operator<<(std::ostream &out, const VCFRow& row);
